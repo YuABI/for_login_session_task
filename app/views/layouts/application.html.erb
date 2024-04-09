@@ -16,7 +16,7 @@
     <% end %>
 
     <% if logged_in? %>
-      <%= link_to "タスク一覧", task_path(current_user.id) %>
+      <%= link_to "タスク一覧", root_path %>
       <%= link_to "タスクを登録する", new_task_path(current_user.id) %>
       <%= link_to "アカウント", user_path(current_user.id) %>
       <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>

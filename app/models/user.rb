@@ -9,6 +9,12 @@ class User < ApplicationRecord
     validates :password, length: {minimum:6,too_short: "は6文字以上で入力してください",}
     validate :password_confirmation_match
 
+    has_many :tasks, dependent: :destroy
+
+    def destroy_with_tasks
+      self.destroy
+    end
+
     private
   
     def password_confirmation_match
